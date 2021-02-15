@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JPTVR19WebShop_jakarta:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JPTVR19WebShop_jakarta</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JPTVR19WebShop_jakarta-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JPTVR19WebShop_jakarta:war exploded" />
+    </root>
+  </artifact>
+</component>
