@@ -1,9 +1,7 @@
 package entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,15 +14,18 @@ public class Product implements Serializable {
     private String model;
     private Integer price;
     private Integer count;
+    @OneToOne
+    private Cover cover;
 
     public Product() {
     }
 
-    public Product(String title, String model, Integer price, Integer count) {
+    public Product(String title, String model, Integer price, Integer count, Cover cover) {
         this.title = title;
         this.model = model;
         this.price = price;
         this.count = count;
+        this.cover = cover;
     }
 
     public Long getId() {
@@ -113,5 +114,11 @@ public class Product implements Serializable {
         return true;
     }
 
+    public Cover getCover() {
+        return cover;
+    }
 
+    public void setCover(Cover cover) {
+        this.cover = cover;
+    }
 }

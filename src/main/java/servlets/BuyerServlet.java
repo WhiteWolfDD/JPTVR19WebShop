@@ -51,7 +51,7 @@ public class BuyerServlet extends HttpServlet {
             request.getRequestDispatcher("/loginForm").forward(request, response);
             return;
         }
-        boolean isRole = userRolesFacade.isRole("READER", user);
+        boolean isRole = userRolesFacade.isRole("BUYER", user);
         if (!isRole) {
             request.setAttribute("info", "У вас нет права использовать этот ресурс. Войдите с соответствующими правами!");
             request.getRequestDispatcher("/loginForm").forward(request, response);
@@ -71,9 +71,8 @@ public class BuyerServlet extends HttpServlet {
 
             case "/buyProduct":
                 String productId = request.getParameter("productId");
-                String buyerId = request.getParameter("buyerId");
                 Product product = productFacade.find(Long.parseLong(productId));
-                Buyer buyer = buyerFacade.find(Long.parseLong(buyerId));
+                Buyer buyer = user.getBuyer();
                 if (product.getCount() > 0) {
                     if (buyer.getMoney() - product.getPrice() >= 0) {
                         product.setCount(product.getCount() - 1);

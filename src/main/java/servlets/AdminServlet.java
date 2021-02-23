@@ -43,7 +43,6 @@ public class AdminServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession httpSession = request.getSession(false);
-
         if (httpSession == null) {
             request.setAttribute("info", "У вас нет права использовать этот ресурс. Войдите!");
             request.getRequestDispatcher("/loginForm").forward(request, response);
@@ -55,7 +54,7 @@ public class AdminServlet extends HttpServlet {
             request.getRequestDispatcher("/loginForm").forward(request, response);
             return;
         }
-        boolean isRole = userRolesFacade.isRole("READER", user);
+        boolean isRole = userRolesFacade.isRole("ADMIN", user);
         if (!isRole) {
             request.setAttribute("info", "У вас нет права использовать этот ресурс. Войдите с соответствующими правами!");
             request.getRequestDispatcher("/loginForm").forward(request, response);
@@ -72,34 +71,25 @@ public class AdminServlet extends HttpServlet {
                     List<String> arrStrRoles = userRolesFacade.findRoles(u);
                     usersMapWithArrayRoles.put(u, arrStrRoles);
                 }
-
                 request.setAttribute("usersMapWithArrayRoles", usersMapWithArrayRoles);
                 request.setAttribute("usersCount", listUsers.size());
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("listBuyers")).forward(request, response);
                 break;
             case "/adminForm":
                 request.setAttribute("activeAdminPanel", "true");
-                List<Role> listRoles = roleFacade.findAll();
-                request.setAttribute("listRoles", listRoles);
-                Map<User, String> usersMap = new HashMap<>();
+                Map<User,String> usersMap = new HashMap<>();
                 listUsers = userFacade.findAll();
                 for (User u : listUsers) {
                     usersMap.put(u, userRolesFacade.getTopRoleForUser(u));
                 }
                 request.setAttribute("usersMap", usersMap);
+                request.setAttribute("listRoles", roleFacade.findAll());
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("adminPanel")).forward(request, response);
                 break;
             case "/setRole":
                 String userId = request.getParameter("userId");
                 String roleId = request.getParameter("roleId");
-                if ("".equals(userId) || userId == null
-                        || "".equals(roleId) || roleId == null) {
-                    request.setAttribute("userId", userId);
-                    request.setAttribute("roleId", roleId);
-                    request.setAttribute("info", "Заполните все поля");
-                    request.getRequestDispatcher(LoginServlet.pathToFile.getString("adminForm")).forward(request, response);
-                    break;
-                }
+
                 user = userFacade.find(Long.parseLong(userId));
                 Role role = roleFacade.find(Long.parseLong(roleId));
                 UserRoles userRoles = new UserRoles(user, role);
@@ -111,7 +101,7 @@ public class AdminServlet extends HttpServlet {
                     request.setAttribute("roleId", roleId);
                     request.setAttribute("info", "Изменить роль невозможно");
                 }
-                request.getRequestDispatcher(LoginServlet.pathToFile.getString("adminForm")).forward(request, response);
+                request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
         }
     }

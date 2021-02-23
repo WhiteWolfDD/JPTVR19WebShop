@@ -17,14 +17,6 @@
     <label for="password">Пароль</label>
     <input type="password" name="password" id="password" value="" required>
 
-    <br><br>
-
-    <label>Выберите роль:</label>
-    <input type="radio" name="role" id="BUYER" value="BUYER" checked>
-    <label for="BUYER">BUYER</label>
-    <input type="radio" name="role" id="MANAGER" value="MANAGER">
-    <label for="MANAGER">MANAGER</label>
-
     <hr>
 
     <h2>Данные пользователя</h2>

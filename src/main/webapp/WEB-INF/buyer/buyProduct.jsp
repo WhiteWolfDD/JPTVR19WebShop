@@ -6,18 +6,13 @@
         <select class="form-control" name="productId">
             <option value="">Выберите товар</option>
             <c:forEach var="product" items="${listProducts}">
-                <option value="${product.id}">Название: "${product.title} ${product.model}" Цена: "${product.price}" Кол-во: "${product.count}"</option>
+                <option value="${product.id}">Название: "${product.title} ${product.model}" Цена: "${product.price}€" Осталось: "${product.count}"</option>
             </c:forEach>
         </select>
 
         <div class="top-100"></div>
 
-        <select class="form-control" name="buyerId" style="margin-top: 2.5rem">
-            <option value="">Выберите покупателя</option>
-            <c:forEach var="buyer" items="${listBuyers}">
-                <option value="${buyer.id}">Имя: "${buyer.name} ${buyer.lastname}" Баланс: "${buyer.money}" Э-майл: "${buyer.email}"</option>
-            </c:forEach>
-        </select>
-        <button class="btn btn-primary w-100" style="margin-top: 1rem;">Купить товар</button>
+
+        <button type="submit" class="btn  w-100" style="margin-top: 1rem; background-color: #EB984E">Купить товар</button>
     </form>
 </div>

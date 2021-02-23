@@ -1,11 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<div style="margin-left: 1rem">
-    <h1>Список читателей</h1>
-    <p>Всего пользователей: ${usersCount}<p>
-</div>
-<table class="table table-striped">
-    <thead>
+<h1 class="text-center">Список читателей</h1>
+<p class="text-center">Всего пользователей: <strong>${usersCount}</strong><p>
+<table class="table table-striped table-hover w-75 mx-auto mt-5">
+    <thead class="table-dark">
     <th>№</th>
     <th>Id</th>
     <th>Имя</th>
@@ -28,8 +26,8 @@
             <td>${entry.key.buyer.money}€</td>
             <td>${entry.key.login}</td>
             <td><c:if test="${entry.value[0] ne ''}">${entry.value[0]}</c:if></td>
-            <td><strong>Да</strong></td>
-            <td><a class="btn bg-primary text-white" href="editBuyer?userId=${entry.key.id}">Изменить</a></td>
+            <td><em><strong>Да</strong></em></td>
+            <td><a class="btn text-white" style="background-color: #EB984E" href="editBuyerForm?userId=${entry.key.id}">Изменить</a></td>
         </tr>
     </c:forEach>
 

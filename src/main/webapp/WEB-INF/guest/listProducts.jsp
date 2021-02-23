@@ -6,12 +6,12 @@
 <div class="w-100 d-flex justify-content-center m-2">
     <c:forEach var="product" items="${listProducts}">
         <div class="card m-2" >
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+            <img src="insertCover/${product.cover.path}" class="card-img-top" alt="..." style="max-width: 12rem; max-height: 15rem; margin: 0 auto">
             <div class="card-body">
                 <h5 class="card-title">${product.title} ${product.model}</h5>
                 <p class="card-text">${product.price}</p>
-                <a href="#" class="btn btn-primary">Смотреть</a>
-                <a href="buyProductForm" class="btn btn-primary">Купить</a>
+                <a href="#" class="btn" style="background-color: #EB984E">Смотреть</a>
+                <a href="buyProductForm" class="btn" style="background-color: #EB984E">Купить</a>
             </div>
         </div>
     </c:forEach>

@@ -40,9 +40,8 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-
         if (userFacade.findAll().size() > 0) return;
-        Buyer buyer = new Buyer("Vladislav", "Hodzhajev", Double.parseDouble(String.valueOf(10000)), "vladislav.hodzajev@ivkhk.ee");
+        Buyer buyer = new Buyer("Vlad", "Hodzhajev", Double.parseDouble(String.valueOf(999999)), "vladislav.hodzajev@ivkhk.ee");
         buyerFacade.create(buyer);
         User user = new User("admin", "admin", buyer);
         userFacade.create(user);
@@ -54,11 +53,10 @@ public class LoginServlet extends HttpServlet {
         roleFacade.create(role);
         userRoles = new UserRoles(user, role);
         userRolesFacade.create(userRoles);
-        role = new Role("READER");
+        role = new Role("BUYER");
         roleFacade.create(role);
         userRoles = new UserRoles(user, role);
         userRolesFacade.create(userRoles);
-
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -76,13 +74,8 @@ public class LoginServlet extends HttpServlet {
                 String login = request.getParameter("login");
                 String password = request.getParameter("password");
                 User user = userFacade.findByLogin(login);
-                if (user == null) {
-                    request.setAttribute("info", "Неправильный логин или пароль!");
-                    request.getRequestDispatcher("/loginForm").forward(request, response);
-                    break;
-                }
-                if (!password.equals(user.getPassword())) {
-                    request.setAttribute("info", "Неправильный логин или пароль!");
+                if(user == null){
+                    request.setAttribute("info","Нет такого пользователя");
                     request.getRequestDispatcher("/loginForm").forward(request, response);
                     break;
                 }
@@ -96,7 +89,7 @@ public class LoginServlet extends HttpServlet {
                 if (httpSession != null) {
                     httpSession.invalidate();
                 }
-                request.setAttribute("info", "Вы вышли");
+                request.setAttribute("info", "Вы вышли.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
             case "/registrationForm":
@@ -118,9 +111,10 @@ public class LoginServlet extends HttpServlet {
                 httpSession = request.getSession(true);
                 httpSession.setAttribute("user", user);
                 // Roles adding...
-                Role roleBuyer = roleFacade.findByName("READER");
+                Role roleBuyer = roleFacade.findByName("BUYER");
                 UserRoles userRoles = new UserRoles(user, roleBuyer);
                 userRolesFacade.create(userRoles);
+                request.setAttribute("checkRole", "3");
                 request.setAttribute("info",
                         "Пользователь " + user.getLogin() + " добавлен"
                 );

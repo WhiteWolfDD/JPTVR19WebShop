@@ -10,4 +10,4 @@
 <body>
 <div>
     <c:import url="/WEB-INF/main/main.jsp" />
-    <p class="w-100 text-center text-danger" style="margin-top: 1rem">${info}</p>
+    <p class="text-center text-danger text-danger" style="margin: 1rem auto;">${info}</p>

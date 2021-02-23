@@ -1,9 +1,6 @@
 package servlets;
 
-import entity.Buyer;
-import entity.History;
-import entity.Product;
-import entity.User;
+import entity.*;
 import session.*;
 
 import jakarta.ejb.EJB;
@@ -23,11 +20,10 @@ import java.util.ResourceBundle;
 @WebServlet(name = "ManagerServlet", urlPatterns = {
         "/addProduct",
         "/createProduct",
-        "/editProductForm",
-        "/editProduct",
         "/editBuyerForm",
         "/editBuyer",
         "/showBoughtProduct",
+        "/uploadForm",
 })
 
 public class ManagerServlet extends HttpServlet {
@@ -42,6 +38,8 @@ public class ManagerServlet extends HttpServlet {
     private UserFacade userFacade;
     @EJB
     private UserRolesFacade userRolesFacade;
+    @EJB
+    private CoverFacade coverFacade;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -60,7 +58,7 @@ public class ManagerServlet extends HttpServlet {
             request.getRequestDispatcher("/loginForm").forward(request, response);
             return;
         }
-        boolean isRole = userRolesFacade.isRole("READER", user);
+        boolean isRole = userRolesFacade.isRole("BUYER", user);
         if (!isRole) {
             request.setAttribute("info", "У вас нет права использовать этот ресурс. Войдите с соответствующими правами!");
             request.getRequestDispatcher("/loginForm").forward(request, response);
@@ -70,6 +68,8 @@ public class ManagerServlet extends HttpServlet {
         String path = request.getServletPath();
         switch (path) {
             case "/addProduct":
+                List<Cover> listCovers = coverFacade.findAll();
+                request.setAttribute("listCovers", listCovers);
                 request.setAttribute("activeAddProduct", "true");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("newProduct")).forward(request, response);
                 break;
@@ -78,33 +78,13 @@ public class ManagerServlet extends HttpServlet {
                 String model = request.getParameter("model");
                 String price = request.getParameter("price");
                 String count = request.getParameter("count");
+                String coverId = request.getParameter("coverId");
 
-                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count));
+                Cover cover = coverFacade.find(Long.parseLong(coverId));
+                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count), cover);
                 productFacade.create(product);
+                request.setAttribute("coverId", coverId);
                 request.setAttribute("info", "Товар " + product.getTitle() + " добавлен.");
-                request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
-                break;
-            case "/editProductForm":
-                List<Product> listProducts = productFacade.findAll();
-                request.setAttribute("listProducts", listProducts);
-                request.getRequestDispatcher(LoginServlet.pathToFile.getString("editProduct")).forward(request, response);
-                break;
-            case "/editProduct":
-                String productId = request.getParameter("productId");
-                title = request.getParameter("title");
-                model = request.getParameter("model");
-                price = request.getParameter("price");
-                count = request.getParameter("count");
-
-                product = productFacade.find(Long.parseLong(productId));
-                product.setTitle(title);
-                product.setModel(model);
-                product.setPrice(Integer.parseInt(price));
-                product.setCount(Integer.parseInt(count));
-                productFacade.edit(product);
-                request.setAttribute("productId", productId);
-                request.setAttribute("product", product);
-                request.setAttribute("info", "Товар " + product.getTitle() + " был успешно изменён.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
 
@@ -133,6 +113,7 @@ public class ManagerServlet extends HttpServlet {
                 request.setAttribute("info", "Пользователь " + buyer.getName() + " " + buyer.getLastname() + " был успешно изменён.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
+
             case "/showBoughtProduct":
                 request.setAttribute("activeListHistory", "true");
                 List<History> listHistory = historyFacade.findAll();
@@ -145,6 +126,9 @@ public class ManagerServlet extends HttpServlet {
                 request.setAttribute("historyListMap", historyListMap);
                 request.setAttribute("historyCount", listHistory.size());
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("showBoughtProduct")).forward(request, response);
+                break;
+            case "/uploadForm":
+                request.getRequestDispatcher(LoginServlet.pathToFile.getString("uploadForm")).forward(request, response);
                 break;
         }
     }

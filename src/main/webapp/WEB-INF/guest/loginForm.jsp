@@ -1,29 +1,19 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<html>
-<head>
-    <title>Вход в систему</title>
-</head>
-<body>
-    <div style="margin-left: 1rem">
-    <h1>Вход в систему</h1>
-        <a href="index.jsp">Домой</a>
-    </div>
-        <hr>
-    <div style="margin-left: 1rem">
-        <form action="login" method="POST">
-            <label for="login">Логин</label>
-            <input type="text" name="login" id="login" value="" required>
-
-            <br><br>
-
-            <label for="password">Пароль</label>
-            <input type="password" name="password" id="password" value="" required>
-
-            <br><br>
-
-            <input type="submit" value="Войти"><br>
-        </form>
-        <p>Нет аккаунта? <a href="registrationForm">Зарегистрироваться</a></p>
-    </div>
-</body>
-</html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<div class="mx-auto mt-5  p-3" style="width: 30rem">
+    <h2 class="w-100 m-4 text-center mx-auto">Введите логин и пароль</h2>
+    <form action="login" method="POST">
+        <div class="row m-2 ">
+            <div class="col-sm-10 mx-auto">
+                <input type="text" class="form-control" id="login" name="login" placeholder="Логин" value="${login}">
+            </div>
+        </div>
+        <div class="row m-2 ">
+            <div class="col-sm-10 mx-auto">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Пароль" value="${password}">
+            </div>
+        </div>
+        <div class=" mt-4 m-2 w-100 row">
+            <input type="submit" value="Войти" class="mx-auto col-4 btn" style="width: 16rem; background-color: #EB984E;">
+        </div>
+    </form>
+</div>
