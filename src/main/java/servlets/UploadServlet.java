@@ -2,27 +2,21 @@ package servlets;
 
 import entity.Cover;
 import entity.User;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.http.Part;
+import jakarta.servlet.http.*;
 import session.CoverFacade;
 import session.UserRolesFacade;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "UploadServlet", urlPatterns = {
         "/uploadCover",
@@ -39,6 +33,8 @@ public class UploadServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        request.setAttribute("loggedIn", false);
+        request.setAttribute("loggedOut", true);
         HttpSession session = request.getSession(false);
         if (session == null) {
             request.setAttribute("info", "У вас нет права использовать этот ресурс. Войдите!");
@@ -75,7 +71,6 @@ public class UploadServlet extends HttpServlet {
         String description = request.getParameter("description");
         Cover cover = new Cover(description, sb.toString());
         coverFacade.create(cover);
-        request.setAttribute("cover", cover);
         request.setAttribute("info", "Файл загружен");
         request.getRequestDispatcher("/addProduct").forward(request, response);
     }

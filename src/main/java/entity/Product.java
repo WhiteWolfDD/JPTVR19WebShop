@@ -14,18 +14,20 @@ public class Product implements Serializable {
     private String model;
     private Integer price;
     private Integer count;
+    private String description;
     @OneToOne
     private Cover cover;
 
     public Product() {
     }
 
-    public Product(String title, String model, Integer price, Integer count, Cover cover) {
+    public Product(String title, String model, Integer price, Integer count, Cover cover, String description) {
         this.title = title;
         this.model = model;
         this.price = price;
         this.count = count;
         this.cover = cover;
+        this.description = description;
     }
 
     public Long getId() {
@@ -68,9 +70,17 @@ public class Product implements Serializable {
         this.count = count;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription() {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", title=" + title + ", model=" + model + ", price=" + price + ", count=" + count + '}';
+        return "Product{" + "id=" + id + ", title=" + title + ", model=" + model + ", price=" + price + ", count=" + count + ", description" + description + '}';
     }
 
     @Override
@@ -81,6 +91,7 @@ public class Product implements Serializable {
         hash = 67 * hash + Objects.hashCode(this.model);
         hash = (int) (67 * hash + this.price);
         hash = 67 * hash + this.count;
+        hash = 67 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -109,6 +120,9 @@ public class Product implements Serializable {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;

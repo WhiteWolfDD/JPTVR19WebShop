@@ -43,6 +43,9 @@ public class ManagerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        List<Product> listProducts = productFacade.findAll();
+        request.setAttribute("listProducts", listProducts);
+
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession httpSession = request.getSession(false);
@@ -79,11 +82,11 @@ public class ManagerServlet extends HttpServlet {
                 String price = request.getParameter("price");
                 String count = request.getParameter("count");
                 String coverId = request.getParameter("coverId");
+                String description = request.getParameter("description");
 
                 Cover cover = coverFacade.find(Long.parseLong(coverId));
-                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count), cover);
+                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count), cover, description);
                 productFacade.create(product);
-                request.setAttribute("coverId", coverId);
                 request.setAttribute("info", "Товар " + product.getTitle() + " добавлен.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
@@ -105,7 +108,7 @@ public class ManagerServlet extends HttpServlet {
                 Buyer buyer = buyerFacade.find(Long.parseLong(buyerId));
                 buyer.setName(name);
                 buyer.setLastname(lastname);
-                buyer.setMoney(Double.parseDouble(money));
+                buyer.setMoney(Integer.parseInt(money));
                 buyer.setEmail(email);
                 buyerFacade.edit(buyer);
                 request.setAttribute("buyerId", buyerId);
@@ -113,7 +116,6 @@ public class ManagerServlet extends HttpServlet {
                 request.setAttribute("info", "Пользователь " + buyer.getName() + " " + buyer.getLastname() + " был успешно изменён.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
-
             case "/showBoughtProduct":
                 request.setAttribute("activeListHistory", "true");
                 List<History> listHistory = historyFacade.findAll();

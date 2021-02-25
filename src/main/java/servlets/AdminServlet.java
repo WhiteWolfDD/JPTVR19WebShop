@@ -1,9 +1,6 @@
 package servlets;
 
-import entity.Buyer;
-import entity.Role;
-import entity.User;
-import entity.UserRoles;
+import entity.*;
 import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -40,6 +37,9 @@ public class AdminServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        List<Product> listProducts = productFacade.findAll();
+        request.setAttribute("listProducts", listProducts);
+
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession httpSession = request.getSession(false);
@@ -66,8 +66,8 @@ public class AdminServlet extends HttpServlet {
             case "/listBuyers":
                 request.setAttribute("activeListBuyers", "true");
                 List<User> listUsers = userFacade.findAll();
-                Map<User,List<String>> usersMapWithArrayRoles = new HashMap<>();
-                for(User u : listUsers){
+                Map<User, List<String>> usersMapWithArrayRoles = new HashMap<>();
+                for (User u : listUsers) {
                     List<String> arrStrRoles = userRolesFacade.findRoles(u);
                     usersMapWithArrayRoles.put(u, arrStrRoles);
                 }
@@ -76,8 +76,10 @@ public class AdminServlet extends HttpServlet {
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("listBuyers")).forward(request, response);
                 break;
             case "/adminForm":
+                listProducts = productFacade.findAll();
+                request.setAttribute("listProducts", listProducts);
                 request.setAttribute("activeAdminPanel", "true");
-                Map<User,String> usersMap = new HashMap<>();
+                Map<User, String> usersMap = new HashMap<>();
                 listUsers = userFacade.findAll();
                 for (User u : listUsers) {
                     usersMap.put(u, userRolesFacade.getTopRoleForUser(u));
@@ -95,11 +97,11 @@ public class AdminServlet extends HttpServlet {
                 UserRoles userRoles = new UserRoles(user, role);
                 if (!"admin".equals(user.getLogin())) {
                     userRolesFacade.setNewRole(userRoles);
-                    request.setAttribute("info", "Роль изменена");
+                    request.setAttribute("info", "Роль изменена!");
                 } else {
                     request.setAttribute("userId", userId);
                     request.setAttribute("roleId", roleId);
-                    request.setAttribute("info", "Изменить роль невозможно");
+                    request.setAttribute("info", "Изменить роль невозможно!");
                 }
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;

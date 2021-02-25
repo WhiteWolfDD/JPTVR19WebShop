@@ -16,14 +16,14 @@ public class Buyer implements Serializable{
     private Long id;
     private String name;
     private String lastname;
-    private Double money;
+    private Integer money;
     @Column(unique = true)
     private String email;
 
     public Buyer() {
     }
 
-    public Buyer(String name, String lastname, Double money, String email) {
+    public Buyer(String name, String lastname, Integer money, String email) {
         this.name = name;
         this.lastname = lastname;
         this.money = money;
@@ -54,11 +54,11 @@ public class Buyer implements Serializable{
         this.lastname = lastname;
     }
 
-    public Double getMoney() {
+    public Integer getMoney() {
         return money;
     }
 
-    public void setMoney(Double money) {
+    public void setMoney(Integer money) {
         this.money = money;
     }
 

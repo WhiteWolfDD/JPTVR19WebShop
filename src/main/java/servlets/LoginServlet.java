@@ -21,7 +21,6 @@ import java.util.ResourceBundle;
         "/logout",
         "/registrationForm",
         "/registration",
-        "/listProducts",
 })
 
 public class LoginServlet extends HttpServlet {
@@ -41,7 +40,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         if (userFacade.findAll().size() > 0) return;
-        Buyer buyer = new Buyer("Vlad", "Hodzhajev", Double.parseDouble(String.valueOf(999999)), "vladislav.hodzajev@ivkhk.ee");
+        Buyer buyer = new Buyer("Kirill", "Goritski", Integer.parseInt(String.valueOf(10000)), "kirill.goritski@ivkhk.ee");
         buyerFacade.create(buyer);
         User user = new User("admin", "admin", buyer);
         userFacade.create(user);
@@ -61,6 +60,9 @@ public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        List<Product> listProducts = productFacade.findAll();
+        request.setAttribute("listProducts", listProducts);
+
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String path = request.getServletPath();
@@ -73,29 +75,36 @@ public class LoginServlet extends HttpServlet {
             case "/login":
                 String login = request.getParameter("login");
                 String password = request.getParameter("password");
+
                 User user = userFacade.findByLogin(login);
-                if(user == null){
-                    request.setAttribute("info","Нет такого пользователя");
+                if (user == null) {
+                    request.setAttribute("info", "Нет такого пользователя");
                     request.getRequestDispatcher("/loginForm").forward(request, response);
                     break;
                 }
+
                 HttpSession httpSession = request.getSession(true);
                 httpSession.setAttribute("user", user);
-                request.setAttribute("info", "Добро пожаловать " + user.getLogin() + "!");
+                request.setAttribute("info", "Добро пожаловать " + " \"" + user.getLogin() + "\"" + "!");
+
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
+
             case "/logout":
                 httpSession = request.getSession(false);
                 if (httpSession != null) {
                     httpSession.invalidate();
                 }
+
                 request.setAttribute("info", "Вы вышли.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
+
             case "/registrationForm":
                 request.setAttribute("activeRegistration", "true");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("registration")).forward(request, response);
                 break;
+
             case "/registration":
                 String name = request.getParameter("name");
                 String lastname = request.getParameter("lastname");
@@ -104,30 +113,27 @@ public class LoginServlet extends HttpServlet {
                 login = request.getParameter("login");
                 password = request.getParameter("password");
 
-                Buyer buyer = new Buyer(name, lastname, Double.parseDouble(money), email);
+                Buyer buyer = new Buyer(name, lastname, Integer.parseInt(money), email);
                 buyerFacade.create(buyer);
                 user = new User(login, password, buyer);
                 userFacade.create(user);
+
                 httpSession = request.getSession(true);
                 httpSession.setAttribute("user", user);
-                // Roles adding...
+
+                // Добавление полей
                 Role roleBuyer = roleFacade.findByName("BUYER");
                 UserRoles userRoles = new UserRoles(user, roleBuyer);
                 userRolesFacade.create(userRoles);
+
                 request.setAttribute("checkRole", "3");
                 request.setAttribute("info",
                         "Пользователь " + user.getLogin() + " добавлен"
                 );
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;
-            case "/listProducts":
-                request.setAttribute("activeListProducts", "true");
-                List<Product> listProducts = productFacade.findAll();
-                request.setAttribute("listProducts", listProducts);
-                request.getRequestDispatcher(LoginServlet.pathToFile.getString("listProducts")).forward(request, response);
-                break;
-
         }
+
     }
 
     @Override

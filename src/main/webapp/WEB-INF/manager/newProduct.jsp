@@ -20,6 +20,12 @@
                name="count">
     </div>
 
+    <p class="fw-bold text-muted text-center mt-5">Описание</p>
+
+    <div class="input-group flex-nowrap w-25 my-3 mx-auto">
+        <textarea class="w-100 form-control" style="height: 12rem; resize: none" name="description" id="description" placeholder="Описание товара..."></textarea>
+    </div>
+
     <div class="fw-bold text-muted text-center" style="margin-top: 3rem;">
         <p>Добавление фотографии:</p>
     </div>

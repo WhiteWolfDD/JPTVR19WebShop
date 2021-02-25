@@ -21,6 +21,7 @@ import java.util.List;
 @WebServlet(name = "BuyerServlet", urlPatterns = {
         "/buyProductForm",
         "/buyProduct",
+        "/listProducts",
 })
 
 public class BuyerServlet extends HttpServlet {
@@ -36,6 +37,9 @@ public class BuyerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        List<Product> listProducts = productFacade.findAll();
+        request.setAttribute("listProducts", listProducts);
+
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession httpSession = request.getSession(false);
@@ -62,17 +66,16 @@ public class BuyerServlet extends HttpServlet {
         switch (path) {
             case "/buyProductForm":
                 request.setAttribute("activeBuyProduct", "true");
-                List<Product> listProducts = productFacade.findAll();
+                listProducts = productFacade.findAll();
                 request.setAttribute("listProducts", listProducts);
-                List<Buyer> listBuyers = buyerFacade.findAll();
-                request.setAttribute("listBuyers", listBuyers);
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("buyProduct")).forward(request, response);
                 break;
 
             case "/buyProduct":
                 String productId = request.getParameter("productId");
+
                 Product product = productFacade.find(Long.parseLong(productId));
-                Buyer buyer = user.getBuyer();
+                Buyer buyer = buyerFacade.find(user.getBuyer().getId());
                 if (product.getCount() > 0) {
                     if (buyer.getMoney() - product.getPrice() >= 0) {
                         product.setCount(product.getCount() - 1);
@@ -87,6 +90,13 @@ public class BuyerServlet extends HttpServlet {
                     }
                 }
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
+                break;
+
+            case "/listProducts":
+                request.setAttribute("activeListProducts", "true");
+                listProducts = productFacade.findAll();
+                request.setAttribute("listProducts", listProducts);
+                request.getRequestDispatcher(LoginServlet.pathToFile.getString("listProducts")).forward(request, response);
                 break;
         }
     }

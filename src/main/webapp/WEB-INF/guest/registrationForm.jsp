@@ -4,43 +4,52 @@
     <title>Регистрация пользователя</title>
 </head>
 <body>
-<h1>Регистрация/добавление пользователя</h1>
-<a href="../../index.jsp">Домой</a>
-<hr>
+<h1 class="text-center">Регистрация пользователя</h1>
+
 <form action="registration" method="POST">
-    <h2>Логин и пароль</h2>
-    <label for="login">Логин</label>
-    <input type="text" name="login" id="login" value="" required>
+    <div class="w-50 mx-auto">
+        <p class="fw-bold text-muted text-center mt-5">Логин и пароль</p>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">&#x1F464;</span>
+            <input class="form-control w-100" type="text" name="login" id="login" placeholder="Логин" required>
+        </div>
 
-    <br><br>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">&#128274;</span>
+            <input class="form-control w-100" type="password" name="password" id="password" placeholder="Пароль" required>
+        </div>
 
-    <label for="password">Пароль</label>
-    <input type="password" name="password" id="password" value="" required>
+        <p class="fw-bold text-muted text-center mt-5">Данные пользователя</p>
 
-    <hr>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">....</span>
+            <input class="form-control w-100" type="text" name="name" id="name" placeholder="Имя" required>
+        </div>
 
-    <h2>Данные пользователя</h2>
-    <label for="name">Имя:</label>
-    <input type="text" name="name" id="name" required>
 
-    <br><br>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">....</span>
+            <input class="form-control w-100" type="text" name="lastname" id="lastname" placeholder="Фамилия" required>
+        </div>
 
-    <label for="lastname">Фамилия:</label>
-    <input type="text" name="lastname" id="lastname" required>
 
-    <br><br>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">@</span>
+            <input class="form-control w-100" type="text" name="email" id="email" placeholder="E-mail" required>
+        </div>
 
-    <label for="email">E-mail:</label>
-    <input type="text" name="email" id="email" required>
 
-    <br><br>
+        <div class="input-group flex-nowrap w-50 my-3 mx-auto">
+            <span class="input-group-text">€</span>
+            <input class="form-control w-100" type="text" name="money" id="money" placeholder="Баланс" required>
+        </div>
 
-    <label for="money">Деньги:</label>
-    <input type="text" name="money" id="money" required>
-
-    <br><br>
-
-    <input type="submit" value="Зарегистрироваться">
+        <div class="w-50 mx-auto mt-5">
+            <div class="mx-auto w-50">
+                <input class="btn btn-primary mx-auto w-100" type="submit" name="submit" value="Зарегистрироваться">
+            </div>
+        </div>
+    </div>
 </form>
 </body>
 </html>
