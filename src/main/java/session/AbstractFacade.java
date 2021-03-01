@@ -1,6 +1,8 @@
 package session;
 
 import java.util.List;
+
+import entity.Product;
 import jakarta.persistence.EntityManager;
 
 public abstract class AbstractFacade<T> {

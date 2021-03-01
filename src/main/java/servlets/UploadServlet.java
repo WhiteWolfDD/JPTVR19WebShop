@@ -53,7 +53,7 @@ public class UploadServlet extends HttpServlet {
             request.getRequestDispatcher("/loginForm").forward(request, response);
             return;
         }
-        String uploadFolder = "D:\\UploadJPTVR19WebShop";
+        String uploadFolder = "C:\\Users\\vladi\\Desktop\\Тех\\Melnikov\\UploadJPTVR19WebShop";
         List<Part> fileParts = request
                 .getParts()
                 .stream()

@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         if (userFacade.findAll().size() > 0) return;
-        Buyer buyer = new Buyer("Kirill", "Goritski", Integer.parseInt(String.valueOf(10000)), "kirill.goritski@ivkhk.ee");
+        Buyer buyer = new Buyer("Vladislav", "Hodzhajev", Integer.parseInt(String.valueOf(10000)), "vladislav.hodzajev@ivkhk.ee");
         buyerFacade.create(buyer);
         User user = new User("admin", "admin", buyer);
         userFacade.create(user);
