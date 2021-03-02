@@ -25,7 +25,7 @@ public class CartFacade extends AbstractFacade<Cart> {
 
     public List<Cart> findCartProducts(Cart cart) {
         try {
-            return (List<Cart>) em.createQuery("SELECT c FROM C u WHERE u.product=:product")
+            return (List<Cart>) em.createQuery("SELECT u FROM Cart u WHERE u.product=:product")
                     .setParameter("cart", cart)
                     .getSingleResult();
         } catch (Exception e) {

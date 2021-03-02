@@ -67,8 +67,6 @@ public class CartServlet extends HttpServlet {
         switch (path) {
             case "/addToBag":
 
-                List<Product> listProducts = productFacade.findAll();
-
                 String productId = request.getParameter("productId");
 
                 Product product = productFacade.find(Long.parseLong(productId));
@@ -97,10 +95,4 @@ public class CartServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
-
 }

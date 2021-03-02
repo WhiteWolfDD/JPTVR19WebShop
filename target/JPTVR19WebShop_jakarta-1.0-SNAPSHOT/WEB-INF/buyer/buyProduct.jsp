@@ -155,11 +155,9 @@
 
 <script type="text/javascript">
 
-    <c:forEach var="cart" items="${cartList}">
-    var cart_price =
-    ${cart.price}
-    var cart_count =
-    ${cart.count}
+    <c:forEach var="product" items="${productList}">
+    var cart_product_price = document.getElementById('${product.price}')
+    var cart_product_count = document.getElementById('${product.count}')
     </c:forEach>
 
     var cart_total_amt = document.getElementById('cart_total_amt');
@@ -178,8 +176,8 @@
             itemval.value = parseInt(itemval.value) - 1;
             itemval.style.background = '#fff';
             itemval.style.color = '#000';
-            itemprice.innerHTML = parseInt(itemprice.innerHTML) - cart_price;
-            cart_total_amt.innerHTML = parseInt(cart_total_amt.innerHTML) - cart_price;
+            itemprice.innerHTML = parseInt(itemprice.innerHTML) - cart_product_price;
+            cart_total_amt.innerHTML = parseInt(cart_total_amt.innerHTML) - cart_product_price;
             total_cart_amt.innerHTML = parseInt(cart_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
         }
     }
@@ -187,15 +185,15 @@
         var itemval = document.getElementById(incdec);
         var itemprice = document.getElementById(itemprice);
 // console.log(itemval.value);
-        if (itemval.value >= cart_count) {
-            itemval.value = cart_count;
-            alert('max ' + cart_count + ' allowed');
+        if (itemval.value >= cart_product_count) {
+            itemval.value = cart_product_count;
+            alert('max ' + cart_product_count + ' allowed');
             itemval.style.background = 'red';
             itemval.style.color = '#fff';
         } else {
             itemval.value = parseInt(itemval.value) + 1;
-            itemprice.innerHTML = parseInt(itemprice.innerHTML) + cart_price;
-            cart_total_amt.innerHTML = parseInt(cart_total_amt.innerHTML) + cart_price;
+            itemprice.innerHTML = parseInt(itemprice.innerHTML) + cart_product_price;
+            cart_total_amt.innerHTML = parseInt(cart_total_amt.innerHTML) + cart_product_price;
             total_cart_amt.innerHTML = parseInt(cart_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
         }
     }

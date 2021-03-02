@@ -10,22 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e1945fd-b9af-4522-8635-08866c4d22ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JPTVR19WebShop_jakarta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JPTVR19WebShop_jakarta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UploadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/session/AbstractFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/AbstractFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/CartFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/CartFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/buyProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/listProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/listProducts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jspf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/buyProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/AbstractFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/AbstractFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/CartFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/CartFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/CartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/session/AbstractFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/session/AbstractFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/session/CartFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/session/CartFacade.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -44,7 +48,7 @@
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_WARNINGS" value="true" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
@@ -61,7 +65,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.11227154" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="GlassFish 6.0.0" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 6.0.0" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -146,6 +160,11 @@
       <updated>1614531802617</updated>
       <workItem from="1614531823591" duration="3134000" />
       <workItem from="1614535114821" duration="638000" />
+      <workItem from="1614602660420" duration="627000" />
+      <workItem from="1614692442832" duration="5159000" />
+      <workItem from="1614700198202" duration="1567000" />
+      <workItem from="1614701794060" duration="207000" />
+      <workItem from="1614702022293" duration="1089000" />
     </task>
     <servers />
   </component>
@@ -163,5 +182,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
