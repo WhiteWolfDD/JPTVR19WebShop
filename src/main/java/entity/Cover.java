@@ -87,4 +87,5 @@ public class Cover implements Serializable {
     public String toString() {
         return "Cover{" + "id=" + id + ", description=" + description + ", path=" + path + '}';
     }
+
 }

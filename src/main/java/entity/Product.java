@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Product extends Cart implements Serializable {
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,13 +21,13 @@ public class Product extends Cart implements Serializable {
     public Product() {
     }
 
-    public Product(String title, String model, Integer price, Integer count, Cover cover, String description) {
+    public Product(String title, String model, Integer price, Integer count, String description, Cover cover) {
         this.title = title;
         this.model = model;
         this.price = price;
         this.count = count;
-        this.cover = cover;
         this.description = description;
+        this.cover = cover;
     }
 
     public Long getId() {
@@ -74,9 +74,10 @@ public class Product extends Cart implements Serializable {
         return description;
     }
 
-    public void setDescription() {
+    public void setDescription(String description) {
         this.description = description;
     }
+
 
     @Override
     public String toString() {
@@ -119,10 +120,10 @@ public class Product extends Cart implements Serializable {
         if (!Objects.equals(this.model, other.model)) {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;

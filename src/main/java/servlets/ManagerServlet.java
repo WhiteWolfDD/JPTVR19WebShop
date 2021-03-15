@@ -68,6 +68,7 @@ public class ManagerServlet extends HttpServlet {
             return;
         }
 
+        request.setAttribute("role", userRolesFacade.getTopRoleForUser(user));
         String path = request.getServletPath();
         switch (path) {
             case "/addProduct":
@@ -76,17 +77,19 @@ public class ManagerServlet extends HttpServlet {
                 request.setAttribute("activeAddProduct", "true");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("newProduct")).forward(request, response);
                 break;
+
             case "/createProduct":
                 String title = request.getParameter("title");
                 String model = request.getParameter("model");
                 String price = request.getParameter("price");
                 String count = request.getParameter("count");
-                String coverId = request.getParameter("coverId");
                 String description = request.getParameter("description");
+                String coverId = request.getParameter("coverId");
 
                 Cover cover = coverFacade.find(Long.parseLong(coverId));
-                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count), cover, description);
+                Product product = new Product(title, model, Integer.parseInt(price), Integer.parseInt(count), description, cover);
                 productFacade.create(product);
+
                 request.setAttribute("info", "Товар " + product.getTitle() + " добавлен.");
                 request.getRequestDispatcher(LoginServlet.pathToFile.getString("index")).forward(request, response);
                 break;

@@ -19,5 +19,4 @@ public class BuyerFacade extends AbstractFacade<Buyer> {
     public BuyerFacade() {
         super(Buyer.class);
     }
-
 }

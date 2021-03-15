@@ -10,25 +10,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e1945fd-b9af-4522-8635-08866c4d22ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/shoppingCart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JPTVR19WebShop_jakarta_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/09a42264-7a6f-470c-a3a7-9f1bc8fb5655.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/09a42264-7a6f-470c-a3a7-9f1bc8fb5655/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JPTVR19WebShop_jakarta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JPTVR19WebShop_jakarta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/session/CartFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/CartFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/buyProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/buyProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CartServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/AbstractFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/AbstractFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/CartFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/CartFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Buyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/BuyerServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CarouselServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/CarouselServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/InsertFileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/InsertFileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ManagerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ManagerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/BuyerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/BuyerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/CartFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/session/ProductFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/session/ProductFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/property/pathToFile.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/property/pathToFile.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/listBuyers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/listBuyers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/glassfish-resources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/glassfish-resources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/listProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/listProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/registrationForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/guest/registrationForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/footer.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/footer.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/main/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/newProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/newProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/showBoughtProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/showBoughtProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/uploadForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/manager/uploadForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/admin/listBuyers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/admin/listBuyers.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/buyProduct.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Buyer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/History.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/property/pathToFile.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/property/pathToFile.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/BuyerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CarouselServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CarouselServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/InsertFileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/InsertFileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/ManagerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/servlets/ManagerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/classes/session/CartFacade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/glassfish-resources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/glassfish-resources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/listProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/listProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/registrationForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/guest/registrationForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/jspf/footer.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/jspf/footer.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/jspf/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/jspf/header.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/main/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/newProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/newProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/showBoughtProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/showBoughtProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/uploadForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/manager/uploadForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlets/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/CartServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/session/AbstractFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/session/AbstractFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/session/CartFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/session/CartFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Buyer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Buyer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/History.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/History.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/property/pathToFile.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/property/pathToFile.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/BuyerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/CarouselServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/CarouselServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/InsertFileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/InsertFileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/ManagerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/ManagerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/session/CartFacade.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +96,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Tag Library Descriptor" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -60,24 +127,38 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/buyer" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.11227154" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp\WEB-INF\buyer" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp\WEB-INF\buyer" />
       <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\vladi\Desktop\Тех\Melnikov\JPTVR19WebShop\src\main\webapp" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="entity" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="GlassFish Server.GlassFish 6.0.0">
     <configuration name="GlassFish 6.0.0" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 6.0.0" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -149,6 +230,14 @@
         </option>
       </method>
     </configuration>
+    <configuration name="balanceReplenishment.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/JPTVR19WebShop_jakarta-1.0-SNAPSHOT/WEB-INF/buyer/balanceReplenishment.jsp">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.balanceReplenishment.jsp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -164,7 +253,19 @@
       <workItem from="1614692442832" duration="5159000" />
       <workItem from="1614700198202" duration="1567000" />
       <workItem from="1614701794060" duration="207000" />
-      <workItem from="1614702022293" duration="1089000" />
+      <workItem from="1614702022293" duration="9301000" />
+      <workItem from="1614773558115" duration="183000" />
+      <workItem from="1614774599772" duration="4621000" />
+      <workItem from="1614841472769" duration="595000" />
+      <workItem from="1614846584665" duration="8206000" />
+      <workItem from="1615022208311" duration="2722000" />
+      <workItem from="1615100958468" duration="11145000" />
+      <workItem from="1615212257876" duration="11223000" />
+      <workItem from="1615396892775" duration="4224000" />
+      <workItem from="1615468193659" duration="10582000" />
+      <workItem from="1615536795745" duration="14863000" />
+      <workItem from="1615643860978" duration="1385000" />
+      <workItem from="1615648494023" duration="667000" />
     </task>
     <servers />
   </component>

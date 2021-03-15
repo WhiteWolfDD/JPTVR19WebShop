@@ -6,11 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
     <title>FurnitureShop | магазин мягкой мебели</title>
 </head>
-<body>
+<body style="position: relative;">
 <div>
     <c:import url="/WEB-INF/main/main.jsp"/>
     <p class="text-center text-danger text-danger" style="margin: 1rem auto;">${info}</p>
+</div>
+
+<style>
+    body {
+        color: #1a202c;
+        text-align: left;
+        background-color: rgba(226, 232, 240, 0.5);
+    }
+</style>

@@ -3,7 +3,7 @@
 <h1 class="text-center">Список проданных товаров</h1>
 <p class="text-center">Всего проданных товаров: <strong>${historyCount}</strong><p>
 <table class="table table-striped table-hover w-75 mx-auto mt-5">
-    <thead class="table-dark">
+    <thead class="table table-dark text-center">
     <th>№</th>
     <th>ID товара</th>
     <th>Название товара</th>
@@ -12,10 +12,10 @@
     <th>Имя покупателя</th>
     <th>Дата покупки</th>
     </thead>
-    <tbody>
+    <tbody class="text-center table-dark table-striped">
     <c:forEach var="entry" items="${historyListMap}" varStatus="status">
         <tr>
-            <td><em>${status.index+1}</em></td>
+            <td><em><strong>${status.index+1}</strong></em></td>
             <td>${entry.key.product.id}</td>
             <td>${entry.key.product.title} ${entry.key.product.model}</td>
             <td>${entry.key.product.price}€</td>

@@ -16,58 +16,44 @@ public class History implements Serializable {
     private Buyer buyer;
     @Temporal(TemporalType.TIMESTAMP)
     private Date takeOn;
+    private Integer quantity;
 
     public History() {
     }
 
-    public History(Product product, Buyer buyer, Date takeOn) {
-        this.product = product;
-        this.buyer = buyer;
-        this.takeOn = takeOn;
+    @Override
+    public String toString() {
+        return "History{" +
+                "id=" + id +
+                ", product=" + product +
+                ", buyer=" + buyer +
+                ", takeOn=" + takeOn +
+                ", quantity=" + quantity +
+                '}';
     }
 
     @Override
-    public String toString() {
-        return "History{" + "product=" + product + ", buyer=" + buyer + ", takeOn=" + takeOn + '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        History history = (History) o;
+
+        if (id != null ? !id.equals(history.id) : history.id != null) return false;
+        if (product != null ? !product.equals(history.product) : history.product != null) return false;
+        if (buyer != null ? !buyer.equals(history.buyer) : history.buyer != null) return false;
+        if (takeOn != null ? !takeOn.equals(history.takeOn) : history.takeOn != null) return false;
+        return quantity != null ? quantity.equals(history.quantity) : history.quantity == null;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.id);
-        hash = 37 * hash + Objects.hashCode(this.product);
-        hash = 37 * hash + Objects.hashCode(this.buyer);
-        hash = 37 * hash + Objects.hashCode(this.takeOn);
-
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final History other = (History) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.product, other.product)) {
-            return false;
-        }
-        if (!Objects.equals(this.buyer, other.buyer)) {
-            return false;
-        }
-        if (!Objects.equals(this.takeOn, other.takeOn)) {
-            return false;
-        }
-
-        return true;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (product != null ? product.hashCode() : 0);
+        result = 31 * result + (buyer != null ? buyer.hashCode() : 0);
+        result = 31 * result + (takeOn != null ? takeOn.hashCode() : 0);
+        result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
+        return result;
     }
 
     public Long getId() {
@@ -102,4 +88,18 @@ public class History implements Serializable {
         this.takeOn = takeOn;
     }
 
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public History(Product product, Buyer buyer, Date takeOn, Integer quantity) {
+        this.product = product;
+        this.buyer = buyer;
+        this.takeOn = takeOn;
+        this.quantity = quantity;
+    }
 }

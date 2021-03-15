@@ -10,7 +10,8 @@ import java.io.*;
 import java.net.URLDecoder;
 
 @WebServlet(name = "InsertFileServlet", urlPatterns = {
-        "/insertCover/*"
+        "/insertCover/*",
+        "/insertAvatar/*",
 })
 public class InsertFileServlet extends HttpServlet {
     static final int DEFAULT_BUFFER_SIZE = 10240;
@@ -19,6 +20,7 @@ public class InsertFileServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+
         String filePath = request.getPathInfo();
         if (null == filePath) {
             response.sendError((HttpServletResponse.SC_NOT_FOUND));
